@@ -1,4 +1,10 @@
 package com.jetbrains.handson.mpp.mobile.model
 
-class Row {
+import kotlinx.serialization.Polymorphic
+import kotlinx.serialization.Serializable
+
+@Polymorphic
+@Serializable
+abstract class Row {
+
 }
