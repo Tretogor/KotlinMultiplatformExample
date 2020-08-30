@@ -9,7 +9,7 @@ kotlin {
      val ktor_version = "1.4.0"
      val serialization_version = "1.0.0-RC"
      val slf4j_version = "1.7.28"
-     val koin_version = "3.0.0-alpha-2"
+     val koin_version = "3.0.1-alpha-2"
      val coroutines_version = "1.3.0-RC"
 
     //select iOS target platform depending on the Xcode environment variables
@@ -33,7 +33,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-                implementation("org.koin:koin-core:$koin_version")
+                api("org.koin:koin-core:$koin_version")
 
                 // Coroutines
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version")
@@ -58,10 +58,10 @@ kotlin {
 
                 // Ktor
                 implementation("io.ktor:ktor-client-android:$ktor_version")
-                implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
-                implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
-                implementation("io.ktor:ktor-client-logging-jvm:$ktor_version")
-                implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
+//                implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
+//                implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
+//                implementation("io.ktor:ktor-client-logging-jvm:$ktor_version")
+//                implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
                 implementation("org.slf4j:slf4j-android:$slf4j_version")
 
             }
@@ -73,10 +73,10 @@ kotlin {
 
                 // Ktor
                 implementation("io.ktor:ktor-client-ios:$ktor_version")
-                implementation("io.ktor:ktor-client-core-native:$ktor_version")
-                implementation("io.ktor:ktor-client-json-native:$ktor_version")
-                implementation("io.ktor:ktor-client-logging-native:$ktor_version")
-                implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
+//                implementation("io.ktor:ktor-client-core-native:$ktor_version")
+//                implementation("io.ktor:ktor-client-json-native:$ktor_version")
+//                implementation("io.ktor:ktor-client-logging-native:$ktor_version")
+//                implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
             }
         }
     }

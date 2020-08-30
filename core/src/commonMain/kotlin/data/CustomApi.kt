@@ -42,5 +42,6 @@ class CustomApi {
         }
     }
 
+    @Throws(Exception::class)
     suspend fun getRows() = client.get<Screen>("$baseUrl/screen")
 }
