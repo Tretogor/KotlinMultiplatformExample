@@ -13,3 +13,4 @@
 /captures
 .externalNativeBuild
 .cxx
+!/.idea/artifacts/core_android.xml
