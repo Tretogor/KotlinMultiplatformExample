@@ -6,11 +6,6 @@ plugins {
 }
 
 kotlin {
-     val ktor_version = "1.4.0"
-     val serialization_version = "1.0.0-RC"
-     val slf4j_version = "1.7.28"
-     val koin_version = "3.0.1-alpha-2"
-     val coroutines_version = "1.3.0-RC"
 
     //select iOS target platform depending on the Xcode environment variables
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -32,51 +27,38 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-                api("org.koin:koin-core:$koin_version")
+                implementation(Dependencies.KOTLIN_STD_COMMON)
+                implementation(Dependencies.KOIN_CORE)
 
-                // Coroutines
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version")
+                implementation(Dependencies.COROUTINES_CORE_COMMON)
 
-                // Ktor
-                implementation("io.ktor:ktor-client-core:$ktor_version")
-                implementation("io.ktor:ktor-client-json:$ktor_version")
-                implementation("io.ktor:ktor-client-logging:$ktor_version")
-                implementation("io.ktor:ktor-client-serialization:$ktor_version")
+                implementation(Dependencies.KTOR_CORE)
+                implementation(Dependencies.KTOR_JSON)
+                implementation(Dependencies.KTOR_LOGGING)
+                implementation(Dependencies.KTOR_SERIALIZATION)
 
-                // Serialize
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:${serialization_version}")
+                implementation(Dependencies.KOTLINX_SERIALIZATION)
             }
         }
 
         val androidMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib")
+                implementation(Dependencies.KOTLIN_STD)
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
+                implementation(Dependencies.COROUTINES_ANDROID)
+                implementation(Dependencies.COROUTINES_CORE)
 
-                // Ktor
-                implementation("io.ktor:ktor-client-android:$ktor_version")
-//                implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
-//                implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
-//                implementation("io.ktor:ktor-client-logging-jvm:$ktor_version")
-//                implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
-                implementation("org.slf4j:slf4j-android:$slf4j_version")
+                implementation(Dependencies.KTOR_ANDROID)
 
+                implementation(Dependencies.SLF4J)
             }
         }
 
         val iosMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version")
+                implementation(Dependencies.COROUTINES_CORE_NATIVE)
 
-                // Ktor
-                implementation("io.ktor:ktor-client-ios:$ktor_version")
-//                implementation("io.ktor:ktor-client-core-native:$ktor_version")
-//                implementation("io.ktor:ktor-client-json-native:$ktor_version")
-//                implementation("io.ktor:ktor-client-logging-native:$ktor_version")
-//                implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
+                implementation(Dependencies.KTOR_IOS)
             }
         }
     }
