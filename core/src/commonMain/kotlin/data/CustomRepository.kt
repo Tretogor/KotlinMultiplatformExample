@@ -10,12 +10,6 @@ class CustomRepository : KoinComponent {
 
     private val api : CustomApi by inject()
 
-    suspend fun getRows() = api.getRows()
-
-    fun getRowsIos(callback: (Screen) -> Unit) {
-        GlobalScope.launch {
-            callback(api.getRows())
-        }
-    }
+    suspend fun getRows() = api.getRows().rows
 
 }

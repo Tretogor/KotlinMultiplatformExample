@@ -7,10 +7,6 @@ import com.jetbrains.handson.mpp.mobile.model.Screen
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.logging.DEFAULT
-import io.ktor.client.features.logging.LogLevel
-import io.ktor.client.features.logging.Logger
-import io.ktor.client.features.logging.Logging
 import io.ktor.client.request.get
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
@@ -34,10 +30,6 @@ class CustomApi {
         HttpClient() {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(nonStrictJson)
-            }
-            install(Logging) {
-                logger = Logger.DEFAULT
-                level = LogLevel.ALL
             }
         }
     }

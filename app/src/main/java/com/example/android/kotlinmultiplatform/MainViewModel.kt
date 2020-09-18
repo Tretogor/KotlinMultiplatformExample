@@ -4,12 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jetbrains.handson.mpp.mobile.data.CustomRepository
+import com.jetbrains.handson.mpp.mobile.model.Row
 import com.jetbrains.handson.mpp.mobile.model.Screen
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: CustomRepository) : ViewModel() {
 
-    private val liveData = MutableLiveData<Screen>()
+    private val liveData = MutableLiveData<List<Row>>()
 
     fun getRows() {
         viewModelScope.launch {

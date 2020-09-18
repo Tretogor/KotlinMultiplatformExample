@@ -30,11 +30,11 @@ kotlin {
                 implementation(Dependencies.KOTLIN_STD_COMMON)
                 implementation(Dependencies.KOIN_CORE)
 
-                implementation(Dependencies.COROUTINES_CORE_COMMON)
+                implementation(Dependencies.COROUTINES_CORE)
 
                 implementation(Dependencies.KTOR_CORE)
                 implementation(Dependencies.KTOR_JSON)
-                implementation(Dependencies.KTOR_LOGGING)
+//                implementation(Dependencies.KTOR_LOGGING)
                 implementation(Dependencies.KTOR_SERIALIZATION)
 
                 implementation(Dependencies.KOTLINX_SERIALIZATION)
@@ -56,7 +56,7 @@ kotlin {
 
         val iosMain by getting {
             dependencies {
-                implementation(Dependencies.COROUTINES_CORE_NATIVE)
+//                implementation(Dependencies.COROUTINES_CORE_NATIVE)
 
                 implementation(Dependencies.KTOR_IOS)
             }
