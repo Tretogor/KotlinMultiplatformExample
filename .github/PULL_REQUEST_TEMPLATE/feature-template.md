@@ -14,7 +14,7 @@
 
 #### UI/UX
 -------------
-Link do invision/zeplin: [Telas](http://localhost/)
+Link do invision/zeplin: [Telas](http://localhost/) \
 Link do Release Notes: [Release notes](http://localhost/)
 
 ##### Checklist
