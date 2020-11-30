@@ -13,7 +13,6 @@ import io.ktor.client.request.get
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.SerializersModuleBuilder
-import org.reduxkotlin.createThreadSafeStore
 
 class CustomApi {
 

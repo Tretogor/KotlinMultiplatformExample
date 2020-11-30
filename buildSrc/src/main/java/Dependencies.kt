@@ -4,7 +4,7 @@ object Version {
     const val KTOR_VERSION = "1.4.0"
     const val KOTLINX_SERIALIZATION_VERSION = "1.0.0-RC"
     const val SLF4J_VERSION = "1.7.28"
-    const val REDUX_VERSION = "0.5.5"
+    const val STATEMACHINE_VERSION = "0.2.0"
 }
 
 object Dependencies {
@@ -31,6 +31,6 @@ object Dependencies {
     // Serialize
     const val KOTLINX_SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Version.KOTLINX_SERIALIZATION_VERSION}"
 
-    // Redux
-    const val REDUX = "org.reduxkotlin:redux-kotlin-threadsafe:${Version.REDUX_VERSION}"
+    // State machine
+    const val STATE_MACHINE = "com.tinder.statemachine:statemachine:${Version.STATEMACHINE_VERSION}"
 }

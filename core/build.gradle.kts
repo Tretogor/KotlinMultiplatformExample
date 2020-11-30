@@ -39,7 +39,7 @@ kotlin {
 
                 implementation(Dependencies.KOTLINX_SERIALIZATION)
 
-                implementation(Dependencies.REDUX)
+                implementation(Dependencies.STATE_MACHINE)
             }
         }
 
