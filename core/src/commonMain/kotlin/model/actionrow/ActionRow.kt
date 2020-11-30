@@ -1,8 +1,8 @@
-package com.jetbrains.handson.mpp.mobile.model
+package com.jetbrains.handson.mpp.mobile.model.actionrow
 
 import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable
 
 @Polymorphic
 @Serializable
-abstract class Row
+abstract class ActionRow

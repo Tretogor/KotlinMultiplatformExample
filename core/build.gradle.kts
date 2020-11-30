@@ -38,6 +38,8 @@ kotlin {
                 implementation(Dependencies.KTOR_SERIALIZATION)
 
                 implementation(Dependencies.KOTLINX_SERIALIZATION)
+
+                implementation(Dependencies.REDUX)
             }
         }
 
