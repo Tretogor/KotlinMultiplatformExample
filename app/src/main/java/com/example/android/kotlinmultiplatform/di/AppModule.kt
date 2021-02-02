@@ -9,6 +9,6 @@ import org.koin.dsl.module
 val appModule = module {
     viewModel { MainViewModel(get()) }
 
-    viewModel { PocInputViewModel() }
-    viewModel { PocButtonViewModel() }
+    viewModel { PocInputViewModel(get()) }
+    viewModel { PocButtonViewModel(get()) }
 }

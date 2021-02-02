@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.liveData.observe(this, Observer {
-            it.forEach {row ->
+            it.forEach { row ->
                 when(row) {
                     is ButtonRow -> {
                         root.addView(

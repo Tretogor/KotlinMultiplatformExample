@@ -4,8 +4,8 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-@SerialName("action:url")
-class UrlActionRow(val data: Data) : ActionRow() {
+@SerialName("action:openUrl")
+class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
 
     @Serializable
     data class Data(val url: String, val query: Query)

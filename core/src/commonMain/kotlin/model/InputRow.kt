@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("row:input")
-class InputRow(val id: String, val data: Data) : Row() {
+public class InputRow(val id: String, val data: Data) : Row() {
 
     @Serializable
     data class Data(val hint: String)

@@ -5,6 +5,7 @@ object Version {
     const val KOTLINX_SERIALIZATION_VERSION = "1.0.0-RC"
     const val SLF4J_VERSION = "1.7.28"
     const val REDUX_VERSION = "0.5.5"
+    const val REDUX_THUNK_VERSION = "0.5.3"
 }
 
 object Dependencies {
@@ -33,4 +34,5 @@ object Dependencies {
 
     // Redux
     const val REDUX = "org.reduxkotlin:redux-kotlin-threadsafe:${Version.REDUX_VERSION}"
+    const val REDUX_THUNK = "org.reduxkotlin:redux-kotlin-thunk:${Version.REDUX_THUNK_VERSION}"
 }

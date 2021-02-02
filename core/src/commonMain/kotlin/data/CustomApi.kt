@@ -5,7 +5,7 @@ import com.jetbrains.handson.mpp.mobile.model.InputRow
 import com.jetbrains.handson.mpp.mobile.model.Row
 import com.jetbrains.handson.mpp.mobile.model.Screen
 import com.jetbrains.handson.mpp.mobile.model.actionrow.ActionRow
-import com.jetbrains.handson.mpp.mobile.model.actionrow.UrlActionRow
+import com.jetbrains.handson.mpp.mobile.model.actionrow.OpenUrlActionRow
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
@@ -13,7 +13,6 @@ import io.ktor.client.request.get
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.SerializersModuleBuilder
-import org.reduxkotlin.createThreadSafeStore
 
 class CustomApi {
 
@@ -30,7 +29,7 @@ class CustomApi {
     }
 
     private fun SerializersModuleBuilder.builderPolymorphicActionRow() {
-        polymorphic(ActionRow::class, UrlActionRow::class, UrlActionRow.serializer())
+        polymorphic(ActionRow::class, OpenUrlActionRow::class, OpenUrlActionRow.serializer())
     }
 
     private val nonStrictJson = Json {
@@ -49,4 +48,7 @@ class CustomApi {
 
     @Throws(Exception::class)
     suspend fun getRows() = client.get<Screen>("$baseUrl/screen")
+
+    @Throws(Exception::class)
+    suspend fun makeCall() = client.get<Screen>("$baseUrl/screen")
 }
