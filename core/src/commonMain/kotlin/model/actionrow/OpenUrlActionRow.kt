@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("action:openUrl")
-class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
+data class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
 
     @Serializable
     data class Data(val url: String, val query: Query)
