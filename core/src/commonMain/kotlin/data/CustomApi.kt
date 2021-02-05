@@ -6,6 +6,8 @@ import com.jetbrains.handson.mpp.mobile.model.Row
 import com.jetbrains.handson.mpp.mobile.model.Screen
 import com.jetbrains.handson.mpp.mobile.model.actionrow.ActionRow
 import com.jetbrains.handson.mpp.mobile.model.actionrow.OpenUrlActionRow
+import com.jetbrains.handson.mpp.mobile.model.validation.InputValidation
+import com.jetbrains.handson.mpp.mobile.model.validation.RegexValidation
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
@@ -21,6 +23,7 @@ class CustomApi {
     private val module = SerializersModule {
         builderPolymorphicRow()
         builderPolymorphicActionRow()
+        builderPolymorphicValidation()
     }
 
     private fun SerializersModuleBuilder.builderPolymorphicRow() {
@@ -30,6 +33,10 @@ class CustomApi {
 
     private fun SerializersModuleBuilder.builderPolymorphicActionRow() {
         polymorphic(ActionRow::class, OpenUrlActionRow::class, OpenUrlActionRow.serializer())
+    }
+
+    private fun SerializersModuleBuilder.builderPolymorphicValidation() {
+        polymorphic(InputValidation::class, RegexValidation::class, RegexValidation.serializer())
     }
 
     private val nonStrictJson = Json {

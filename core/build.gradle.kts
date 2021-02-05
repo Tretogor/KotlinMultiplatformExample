@@ -40,7 +40,7 @@ kotlin {
                 implementation(Dependencies.KOTLINX_SERIALIZATION)
 
                 implementation(Dependencies.REDUX)
-                implementation(Dependencies.REDUX_THUNK)
+                //implementation(Dependencies.REDUX_THUNK)
             }
         }
 

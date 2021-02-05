@@ -11,17 +11,22 @@ class PocInputViewModel constructor(
 ) : ViewModel() {
 
     private lateinit var row: InputRow
+    private var input : String = ""
 
     init {
         store.subscribe {
             if (it is GetViewInformationState && it.id == row.id) {
-                store.dispatch(SendViewInformation("query"))
+                store.dispatch(SendViewInformation(input))
             }
         }
     }
 
     fun setRow(row: InputRow) {
         this.row = row
+    }
+
+    fun setInput(input: String) {
+        this.input = input
     }
 
     override fun onCleared() {

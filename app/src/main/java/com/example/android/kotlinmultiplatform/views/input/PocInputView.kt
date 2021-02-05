@@ -3,6 +3,7 @@ package com.example.android.kotlinmultiplatform.views.input
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import androidx.core.widget.addTextChangedListener
 import com.example.android.kotlinmultiplatform.R
 import com.jetbrains.handson.mpp.mobile.model.InputRow
 import kotlinx.android.synthetic.main.input_view.view.*
@@ -22,6 +23,7 @@ class PocInputView @JvmOverloads constructor(
     fun setRow(row: InputRow) {
         viewModel.setRow(row)
         setView(row)
+        setListener()
     }
 
     private fun setView(row: InputRow) {
@@ -30,5 +32,11 @@ class PocInputView @JvmOverloads constructor(
 
     private fun setHint(hint : CharSequence) {
         edtInput.hint = hint
+    }
+
+    private fun setListener() {
+        edtInput.addTextChangedListener {
+            viewModel.setInput(it.toString())
+        }
     }
 }
