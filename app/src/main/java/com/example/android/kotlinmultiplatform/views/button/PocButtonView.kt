@@ -11,7 +11,7 @@ import org.koin.core.inject
 
 class PocButtonView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr), KoinComponent{
+) : FrameLayout(context, attrs, defStyleAttr), KoinComponent {
 
     private val viewModel by inject<PocButtonViewModel>()
 

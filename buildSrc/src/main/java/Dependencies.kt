@@ -1,5 +1,5 @@
 object Version {
-    const val KOIN_VERSION = "3.0.1-alpha-2"
+    const val KOIN_VERSION = "3.0.0-alpha-4"
     const val COROUTINES_VERSION = "1.3.9-native-mt"
     const val KTOR_VERSION = "1.4.0"
     const val KOTLINX_SERIALIZATION_VERSION = "1.0.0-RC"
