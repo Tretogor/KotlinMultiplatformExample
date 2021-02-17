@@ -12,7 +12,7 @@ import org.koin.android.ext.koin.androidLogger
 
 class CustomApplication : Application() {
 
-    private val frameworkListener = object : FrameworkListener {
+    private val frameworkListener = object : FrameworkListener() {
         override fun onOpenUrl(url: String) {
             val browserIntent =
                 Intent(Intent.ACTION_VIEW, Uri.parse(url))
