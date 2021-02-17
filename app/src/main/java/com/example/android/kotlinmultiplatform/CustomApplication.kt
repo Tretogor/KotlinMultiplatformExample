@@ -7,8 +7,11 @@ import com.example.android.kotlinmultiplatform.di.appModule
 import com.jetbrains.handson.mpp.mobile.di.initKoin
 import com.jetbrains.handson.mpp.mobile.listeners.FrameworkListener
 import com.jetbrains.handson.mpp.mobile.sdk.ReduxSDK
+import com.jetbrains.handson.mpp.mobile.store.Store
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+
+lateinit var store: Store
 
 class CustomApplication : Application() {
 
@@ -28,6 +31,6 @@ class CustomApplication : Application() {
             androidContext(this@CustomApplication)
             modules(appModule)
         }
-        ReduxSDK.initialize(frameworkListener)
+        //val reduxSDK = ReduxSDK()
     }
 }

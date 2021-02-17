@@ -18,6 +18,4 @@ fun initKoin() = initKoin{}
 val commonModule = module {
     single { CustomRepository() }
     single { CustomApi() }
-
-    single { ReduxSDK.store }
 }

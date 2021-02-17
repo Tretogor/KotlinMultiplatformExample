@@ -11,4 +11,6 @@ val appModule = module {
 
     viewModel { PocInputViewModel(get()) }
     viewModel { PocButtonViewModel(get()) }
+
+    //single { store }
 }
