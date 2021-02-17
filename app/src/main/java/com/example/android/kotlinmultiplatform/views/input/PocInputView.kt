@@ -18,6 +18,9 @@ class PocInputView @JvmOverloads constructor(
 
     init {
         inflate(context, R.layout.input_view, this)
+        viewModel.liveData.observeForever {
+            edtInput.error = it
+        }
     }
 
     fun setRow(row: InputRow) {

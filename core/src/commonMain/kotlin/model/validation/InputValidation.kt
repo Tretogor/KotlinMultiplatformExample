@@ -5,4 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Polymorphic
 @Serializable
-abstract class InputValidation
+abstract class InputValidation {
+    abstract fun validate(data: String): Boolean
+    abstract fun getErrorMessage(): String
+}

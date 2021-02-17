@@ -1,6 +1,6 @@
 package com.jetbrains.handson.mpp.mobile.listeners
 
-interface FrameworkListener {
+abstract class FrameworkListener {
 
-    fun onOpenUrl(url: String)
+    abstract fun onOpenUrl(url: String)
 }
