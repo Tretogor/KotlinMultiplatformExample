@@ -11,9 +11,9 @@ import com.jetbrains.handson.mpp.mobile.store.Store
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 
-lateinit var store: Store
-
 class CustomApplication : Application() {
+
+    lateinit var store: Store
 
     private val frameworkListener = object : FrameworkListener() {
         override fun onOpenUrl(url: String) {
@@ -31,6 +31,7 @@ class CustomApplication : Application() {
             androidContext(this@CustomApplication)
             modules(appModule)
         }
-        //val reduxSDK = ReduxSDK()
+
+        store = ReduxSDK().initialize(frameworkListener)
     }
 }
