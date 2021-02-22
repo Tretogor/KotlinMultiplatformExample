@@ -1,10 +1,10 @@
-package com.jetbrains.handson.mpp.mobile.store
+package com.wcisang.kotlinmultiplatform.store
 
-import com.jetbrains.handson.mpp.mobile.listeners.FrameworkListener
-import com.jetbrains.handson.mpp.mobile.middleware.frameworkMiddleware
-import com.jetbrains.handson.mpp.mobile.middleware.logginMiddleware
-import com.jetbrains.handson.mpp.mobile.reducer.reducer
-import com.jetbrains.handson.mpp.mobile.state.AppState
+import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
+import com.wcisang.kotlinmultiplatform.middleware.frameworkMiddleware
+import com.wcisang.kotlinmultiplatform.middleware.logginMiddleware
+import com.wcisang.kotlinmultiplatform.reducer.reducer
+import com.wcisang.kotlinmultiplatform.state.AppState
 import org.reduxkotlin.Store
 import org.reduxkotlin.applyMiddleware
 import org.reduxkotlin.createThreadSafeStore

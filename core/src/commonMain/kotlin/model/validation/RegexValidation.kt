@@ -1,10 +1,12 @@
-package com.jetbrains.handson.mpp.mobile.model.validation
+package com.wcisang.kotlinmultiplatform.model.validation
 
+import com.wcisang.annotations.PagValidation
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("validation:regex")
+@PagValidation
 data class RegexValidation(val data: Data) : InputValidation(){
 
     @Serializable

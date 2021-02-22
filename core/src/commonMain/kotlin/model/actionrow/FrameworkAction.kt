@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile.model.actionrow
+package com.wcisang.kotlinmultiplatform.model.actionrow
 
 interface FrameworkAction {
 }

@@ -1,3 +1,3 @@
-package com.jetbrains.handson.mpp.mobile.state
+package com.wcisang.kotlinmultiplatform.state
 
 open class AppState()

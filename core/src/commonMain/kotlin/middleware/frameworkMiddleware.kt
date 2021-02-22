@@ -1,14 +1,14 @@
-package com.jetbrains.handson.mpp.mobile.middleware
+package com.wcisang.kotlinmultiplatform.middleware
 
-import com.jetbrains.handson.mpp.mobile.listeners.FrameworkListener
-import com.jetbrains.handson.mpp.mobile.model.actionrow.FrameworkAction
-import com.jetbrains.handson.mpp.mobile.model.actionrow.OpenUrlActionRow
-import com.jetbrains.handson.mpp.mobile.state.AppState
-import com.jetbrains.handson.mpp.mobile.state.ui.GetViewInformation
-import com.jetbrains.handson.mpp.mobile.state.ui.InvalidInputInformation
-import com.jetbrains.handson.mpp.mobile.state.ui.SendViewInformation
-import com.jetbrains.handson.mpp.mobile.status.InformationStatus
-import com.jetbrains.handson.mpp.mobile.util.buildUrl
+import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
+import com.wcisang.kotlinmultiplatform.model.actionrow.FrameworkAction
+import com.wcisang.kotlinmultiplatform.model.actionrow.OpenUrlActionRow
+import com.wcisang.kotlinmultiplatform.state.AppState
+import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformation
+import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputInformation
+import com.wcisang.kotlinmultiplatform.state.ui.SendViewInformation
+import com.wcisang.kotlinmultiplatform.status.InformationStatus
+import com.wcisang.kotlinmultiplatform.util.buildUrl
 import org.reduxkotlin.middleware
 
 private var information: InformationStatus = InformationStatus.Holding

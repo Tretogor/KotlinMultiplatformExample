@@ -1,8 +1,8 @@
 package com.example.android.kotlinmultiplatform.views.button
 
 import androidx.lifecycle.ViewModel
-import com.jetbrains.handson.mpp.mobile.model.ButtonRow
-import com.jetbrains.handson.mpp.mobile.store.Store
+import com.wcisang.kotlinmultiplatform.model.ButtonRow
+import com.wcisang.kotlinmultiplatform.store.Store
 
 class PocButtonViewModel constructor(
     private val store: Store

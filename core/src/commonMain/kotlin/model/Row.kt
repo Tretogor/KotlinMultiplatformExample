@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile.model
+package com.wcisang.kotlinmultiplatform.model
 
 import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable

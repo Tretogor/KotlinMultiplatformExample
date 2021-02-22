@@ -5,9 +5,8 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.android.kotlinmultiplatform.views.button.PocButtonView
 import com.example.android.kotlinmultiplatform.views.input.PocInputView
-import com.jetbrains.handson.mpp.mobile.createApplicationScreenMessage
-import com.jetbrains.handson.mpp.mobile.model.ButtonRow
-import com.jetbrains.handson.mpp.mobile.model.InputRow
+import com.wcisang.kotlinmultiplatform.model.ButtonRow
+import com.wcisang.kotlinmultiplatform.model.InputRow
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

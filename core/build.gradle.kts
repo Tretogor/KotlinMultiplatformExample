@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("kapt")
     id("kotlinx-serialization")
 }
 
@@ -29,6 +30,10 @@ kotlin {
             dependencies {
                 implementation(Dependencies.KOTLIN_STD_COMMON)
                 implementation(Dependencies.KOIN_CORE)
+                implementation(project(":annotations"))
+                configurations.get("kapt").dependencies.add(
+                    project(":processor")
+                )
 
                 implementation(Dependencies.COROUTINES_CORE)
 
@@ -41,6 +46,7 @@ kotlin {
 
                 implementation(Dependencies.REDUX)
                 //implementation(Dependencies.REDUX_THUNK)
+                kotlin.srcDir("${buildDir.absolutePath}/generated/source/kaptKotlin/")
             }
         }
 

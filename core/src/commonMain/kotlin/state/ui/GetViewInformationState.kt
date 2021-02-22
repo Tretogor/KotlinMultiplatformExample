@@ -1,6 +1,6 @@
-package com.jetbrains.handson.mpp.mobile.state.ui
+package com.wcisang.kotlinmultiplatform.state.ui
 
-import com.jetbrains.handson.mpp.mobile.state.AppState
+import com.wcisang.kotlinmultiplatform.state.AppState
 
 class GetViewInformationState(
     val id: String

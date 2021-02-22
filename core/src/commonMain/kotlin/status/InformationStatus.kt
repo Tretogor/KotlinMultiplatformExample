@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile.status
+package com.wcisang.kotlinmultiplatform.status
 
 sealed class InformationStatus {
     object Holding : InformationStatus()

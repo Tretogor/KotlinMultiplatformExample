@@ -3,8 +3,8 @@ package com.example.android.kotlinmultiplatform
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jetbrains.handson.mpp.mobile.data.CustomRepository
-import com.jetbrains.handson.mpp.mobile.model.Row
+import com.wcisang.kotlinmultiplatform.data.CustomRepository
+import com.wcisang.kotlinmultiplatform.model.Row
 import kotlinx.coroutines.launch
 
 class MainViewModel(

@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.core.widget.addTextChangedListener
 import com.example.android.kotlinmultiplatform.R
-import com.jetbrains.handson.mpp.mobile.model.InputRow
+import com.wcisang.kotlinmultiplatform.model.InputRow
 import kotlinx.android.synthetic.main.input_view.view.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject

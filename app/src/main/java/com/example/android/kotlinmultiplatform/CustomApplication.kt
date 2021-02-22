@@ -4,10 +4,10 @@ import android.app.Application
 import android.content.Intent
 import android.net.Uri
 import com.example.android.kotlinmultiplatform.di.appModule
-import com.jetbrains.handson.mpp.mobile.di.initKoin
-import com.jetbrains.handson.mpp.mobile.listeners.FrameworkListener
-import com.jetbrains.handson.mpp.mobile.sdk.ReduxSDK
-import com.jetbrains.handson.mpp.mobile.store.Store
+import com.wcisang.kotlinmultiplatform.di.initKoin
+import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
+import com.wcisang.kotlinmultiplatform.sdk.ReduxSDK
+import com.wcisang.kotlinmultiplatform.store.Store
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 

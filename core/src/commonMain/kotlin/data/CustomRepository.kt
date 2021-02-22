@@ -1,6 +1,6 @@
-package com.jetbrains.handson.mpp.mobile.data
+package com.wcisang.kotlinmultiplatform.data
 
-import com.jetbrains.handson.mpp.mobile.model.Row
+import com.wcisang.kotlinmultiplatform.model.Row
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 

@@ -1,10 +1,10 @@
-package com.jetbrains.handson.mpp.mobile.reducer
+package com.wcisang.kotlinmultiplatform.reducer
 
-import com.jetbrains.handson.mpp.mobile.state.AppState
-import com.jetbrains.handson.mpp.mobile.state.ui.GetViewInformation
-import com.jetbrains.handson.mpp.mobile.state.ui.GetViewInformationState
-import com.jetbrains.handson.mpp.mobile.state.ui.InvalidInputInformation
-import com.jetbrains.handson.mpp.mobile.state.ui.InvalidInputState
+import com.wcisang.kotlinmultiplatform.state.AppState
+import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformation
+import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformationState
+import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputInformation
+import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputState
 import org.reduxkotlin.Reducer
 
 val reducer: Reducer<AppState> = { state, action ->

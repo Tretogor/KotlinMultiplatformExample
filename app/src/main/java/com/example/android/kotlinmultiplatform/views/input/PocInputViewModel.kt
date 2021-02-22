@@ -2,11 +2,11 @@ package com.example.android.kotlinmultiplatform.views.input
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.jetbrains.handson.mpp.mobile.model.InputRow
-import com.jetbrains.handson.mpp.mobile.state.ui.GetViewInformationState
-import com.jetbrains.handson.mpp.mobile.state.ui.InvalidInputState
-import com.jetbrains.handson.mpp.mobile.state.ui.SendViewInformation
-import com.jetbrains.handson.mpp.mobile.store.Store
+import com.wcisang.kotlinmultiplatform.model.InputRow
+import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformationState
+import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputState
+import com.wcisang.kotlinmultiplatform.state.ui.SendViewInformation
+import com.wcisang.kotlinmultiplatform.store.Store
 
 class PocInputViewModel constructor(
     private val store: Store

@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile.listeners
+package com.wcisang.kotlinmultiplatform.listeners
 
 abstract class FrameworkListener {
 

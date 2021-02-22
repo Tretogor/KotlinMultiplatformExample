@@ -7,10 +7,20 @@
       <module name="core_androidTest" target="1.6" />
       <module name="core_commonMain" target="1.6" />
       <module name="core_commonTest" target="1.6" />
+      <module name="KotlinMultiplatform.annotations.commonMain" target="1.6" />
+      <module name="KotlinMultiplatform.annotations.commonTest" target="1.6" />
+      <module name="KotlinMultiplatform.annotations.jvmMain" target="1.6" />
+      <module name="KotlinMultiplatform.annotations.jvmTest" target="1.6" />
       <module name="KotlinMultiplatform.core.androidMain" target="1.6" />
       <module name="KotlinMultiplatform.core.androidTest" target="1.6" />
       <module name="KotlinMultiplatform.core.commonMain" target="1.6" />
       <module name="KotlinMultiplatform.core.commonTest" target="1.6" />
+      <module name="KotlinMultiplatform.core.jvmMain" target="1.6" />
+      <module name="KotlinMultiplatform.core.jvmTest" target="1.6" />
+      <module name="KotlinMultiplatform.processor.commonMain" target="1.6" />
+      <module name="KotlinMultiplatform.processor.commonTest" target="1.6" />
+      <module name="KotlinMultiplatform.processor.jvmMain" target="1.6" />
+      <module name="KotlinMultiplatform.processor.jvmTest" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

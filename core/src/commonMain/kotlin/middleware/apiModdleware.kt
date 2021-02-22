@@ -1,7 +1,7 @@
-package com.jetbrains.handson.mpp.mobile.middleware
+package com.wcisang.kotlinmultiplatform.middleware
 
-import com.jetbrains.handson.mpp.mobile.model.actionrow.FrameworkAction
-import com.jetbrains.handson.mpp.mobile.state.AppState
+import com.wcisang.kotlinmultiplatform.model.actionrow.FrameworkAction
+import com.wcisang.kotlinmultiplatform.state.AppState
 import org.reduxkotlin.middleware
 
 internal fun apiMiddleware(

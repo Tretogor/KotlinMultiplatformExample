@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile.model.validation
+package com.wcisang.kotlinmultiplatform.model.validation
 
 import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable

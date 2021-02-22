@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile
+package com.wcisang.kotlinmultiplatform
 
 actual fun platformName(): String {
     return "Android"

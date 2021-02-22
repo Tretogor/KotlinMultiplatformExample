@@ -1,10 +1,12 @@
-package com.jetbrains.handson.mpp.mobile.model.actionrow
+package com.wcisang.kotlinmultiplatform.model.actionrow
 
+import com.wcisang.annotations.PagAction
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("action:openUrl")
+@PagAction
 data class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
 
     @Serializable

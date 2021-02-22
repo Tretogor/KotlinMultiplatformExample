@@ -1,7 +1,7 @@
-package com.jetbrains.handson.mpp.mobile.sdk
+package com.wcisang.kotlinmultiplatform.sdk
 
-import com.jetbrains.handson.mpp.mobile.listeners.FrameworkListener
-import com.jetbrains.handson.mpp.mobile.store.Store
+import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
+import com.wcisang.kotlinmultiplatform.store.Store
 
 class ReduxSDK {
 

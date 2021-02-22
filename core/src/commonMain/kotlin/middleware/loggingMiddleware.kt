@@ -1,6 +1,6 @@
-package com.jetbrains.handson.mpp.mobile.middleware
+package com.wcisang.kotlinmultiplatform.middleware
 
-import com.jetbrains.handson.mpp.mobile.state.AppState
+import com.wcisang.kotlinmultiplatform.state.AppState
 import org.reduxkotlin.middleware
 
 internal fun logginMiddleware() = middleware<AppState> { store, next, action ->

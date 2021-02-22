@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile
+package com.wcisang.kotlinmultiplatform
 
 import platform.UIKit.UIDevice
 

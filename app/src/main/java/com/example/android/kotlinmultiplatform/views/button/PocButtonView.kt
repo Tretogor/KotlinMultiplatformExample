@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import com.example.android.kotlinmultiplatform.R
-import com.jetbrains.handson.mpp.mobile.model.ButtonRow
+import com.wcisang.kotlinmultiplatform.model.ButtonRow
 import kotlinx.android.synthetic.main.button_view.view.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject
