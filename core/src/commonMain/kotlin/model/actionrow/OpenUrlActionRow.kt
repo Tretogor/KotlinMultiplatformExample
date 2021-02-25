@@ -10,7 +10,11 @@ import kotlinx.serialization.Serializable
 data class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
 
     @Serializable
-    data class Data(val url: String, val query: Query)
+    data class Data(val url: String, val querys: List<Query>) {
+        fun getIdsFromQuery() : List<String>{
+            return querys.map { it.from }
+        }
+    }
 
     @Serializable
     data class Query(val name: String, val from: String, var value: String = "")

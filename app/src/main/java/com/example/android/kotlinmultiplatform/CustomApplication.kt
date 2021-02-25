@@ -11,6 +11,7 @@ import com.wcisang.kotlinmultiplatform.store.Store
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 
+
 class CustomApplication : Application() {
 
     lateinit var store: Store
@@ -21,6 +22,13 @@ class CustomApplication : Application() {
                 Intent(Intent.ACTION_VIEW, Uri.parse(url))
             browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(browserIntent)
+        }
+
+        override fun onPhoneCall(phone: String) {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:$phone")
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
         }
     }
 

@@ -19,8 +19,8 @@ class PocInputViewModel constructor(
     init {
         store.subscribe {
             if (it is GetViewInformationState && it.id == row.id) {
-                store.dispatch(SendViewInformation(input, row.validation))
-            }else if (it is InvalidInputState) {
+                store.dispatch(SendViewInformation(row.id, input, row.validation))
+            }else if (it is InvalidInputState && it.id == row.id) {
                 liveData.value = it.message
             }else {
 

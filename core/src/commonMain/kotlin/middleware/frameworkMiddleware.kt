@@ -3,6 +3,7 @@ package com.wcisang.kotlinmultiplatform.middleware
 import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
 import com.wcisang.kotlinmultiplatform.model.actionrow.FrameworkAction
 import com.wcisang.kotlinmultiplatform.model.actionrow.OpenUrlActionRow
+import com.wcisang.kotlinmultiplatform.model.actionrow.PhoneCallActionRow
 import com.wcisang.kotlinmultiplatform.state.AppState
 import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformation
 import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputInformation
@@ -21,6 +22,9 @@ fun frameworkMiddleware(
         if (action is OpenUrlActionRow) {
             handleOpenUrlActionRow(frameworkListener, store, action)
         }
+        if (action is PhoneCallActionRow) {
+            handlePhoneCallActionRow(frameworkListener, store, action)
+        }
     }
 
     if (action is SendViewInformation) {
@@ -31,32 +35,60 @@ fun frameworkMiddleware(
     result
 }
 
+fun handlePhoneCallActionRow(
+    frameworkListener: FrameworkListener,
+    store: Store<AppState>,
+    action: PhoneCallActionRow
+) {
+    store.dispatch(GetViewInformation(action.data.query.from))
+    if (information is InformationStatus.Success) {
+        frameworkListener.onPhoneCall(
+            (information as InformationStatus.Success).results.first() as String
+        )
+    }
+    information = InformationStatus.Holding
+}
+
 private fun handleOpenUrlActionRow(
     frameworkListener: FrameworkListener,
     store: Store<AppState>,
     action: OpenUrlActionRow
 ) {
-    store.dispatch(GetViewInformation(action.data.query.from))
+    action.data.getIdsFromQuery().forEach {
+        store.dispatch(GetViewInformation(it))
+    }
     if (information is InformationStatus.Success) {
         frameworkListener.onOpenUrl(
             action.data.url.buildUrl(
-                action.data.query.name,
-                (information as? InformationStatus.Success)?.data as String
+                action.data.querys,
+                (information as InformationStatus.Success).results as MutableList<String>
             )
         )
-        information = InformationStatus.Holding
     }
+    information = InformationStatus.Holding
 }
 
 private fun handleResult(store: Store<AppState>, action: SendViewInformation) {
-    information = if (action.validation != null) {
+    if (action.validation != null) {
         if (action.validation.validate(action.data)) {
-            InformationStatus.Success(action.data)
+            setOrAddInformationToSuccess(action.data)
         } else {
-            store.dispatch(InvalidInputInformation(action.validation.getErrorMessage()))
-            InformationStatus.Canceled
+            store.dispatch(InvalidInputInformation(action.validation.getErrorMessage(), action.id))
+            information = InformationStatus.Canceled
         }
     } else {
-        InformationStatus.Success(action.data)
+        setOrAddInformationToSuccess(action.data)
+    }
+}
+
+private fun setOrAddInformationToSuccess(data: String) {
+    if (information is InformationStatus.Canceled) return
+
+    if (information is InformationStatus.Success) {
+        (information as InformationStatus.Success).addResult(data)
+    } else {
+        information = InformationStatus.Success().apply {
+            addResult(data)
+        }
     }
 }

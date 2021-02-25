@@ -7,6 +7,7 @@ import com.wcisang.kotlinmultiplatform.reducer.reducer
 import com.wcisang.kotlinmultiplatform.state.AppState
 import org.reduxkotlin.Store
 import org.reduxkotlin.applyMiddleware
+import org.reduxkotlin.createSameThreadEnforcedStore
 import org.reduxkotlin.createThreadSafeStore
 
 class Store {
@@ -14,7 +15,7 @@ class Store {
     private lateinit var store: Store<AppState>
 
     fun initStore(frameworkListener: FrameworkListener) {
-        store = createThreadSafeStore(
+        store = createSameThreadEnforcedStore(
             reducer,
             AppState(),
             applyMiddleware(

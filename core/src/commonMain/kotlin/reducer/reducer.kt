@@ -12,7 +12,7 @@ val reducer: Reducer<AppState> = { state, action ->
     if (action is GetViewInformation) {
         state = GetViewInformationState(action.id)
     }else if (action is InvalidInputInformation){
-       state = InvalidInputState(action.message)
+       state = InvalidInputState(action.message, action.id)
     }else {
         state = AppState()
     }
