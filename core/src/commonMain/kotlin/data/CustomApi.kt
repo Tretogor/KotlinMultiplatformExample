@@ -1,30 +1,21 @@
 package com.wcisang.kotlinmultiplatform.data
 
 import com.wcisang.kotlinmultiplatform.model.Screen
-import com.wcisang.kotlinmultiplatform.model.buildPolymorphicPagRow
-import com.wcisang.kotlinmultiplatform.model.actionrow.buildPolymorphicPagAction
-import com.wcisang.kotlinmultiplatform.model.validation.buildPolymorphicPagValidation
+import com.wcisang.kotlinmultiplatform.serializers.SerializerUtils
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.get
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.modules.SerializersModule
 
 class CustomApi {
 
     private val baseUrl = "https://private-5b915e-poctretogor.apiary-mock.com"
 
-    private val module = SerializersModule {
-        buildPolymorphicPagRow()
-        buildPolymorphicPagAction()
-        buildPolymorphicPagValidation()
-    }
-
     private val nonStrictJson = Json {
         isLenient = true
         ignoreUnknownKeys = true
-        serializersModule = module
+        serializersModule = SerializerUtils.module
     }
 
     private val client by lazy {

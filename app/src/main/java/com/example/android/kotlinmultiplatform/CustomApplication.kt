@@ -6,6 +6,8 @@ import android.net.Uri
 import com.example.android.kotlinmultiplatform.di.appModule
 import com.wcisang.kotlinmultiplatform.di.initKoin
 import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
+import com.wcisang.kotlinmultiplatform.listeners.NavigationListener
+import com.wcisang.kotlinmultiplatform.model.Screen
 import com.wcisang.kotlinmultiplatform.sdk.ReduxSDK
 import com.wcisang.kotlinmultiplatform.store.Store
 import org.koin.android.ext.koin.androidContext
@@ -32,6 +34,13 @@ class CustomApplication : Application() {
         }
     }
 
+    private val navigationListener = object : NavigationListener {
+        override fun goTo(screen: Screen) {
+            startActivity(AuxActivity.newInstance(this@CustomApplication, screen))
+        }
+
+    }
+
     override fun onCreate() {
         super.onCreate()
         initKoin {
@@ -40,6 +49,6 @@ class CustomApplication : Application() {
             modules(appModule)
         }
 
-        store = ReduxSDK().initialize(frameworkListener)
+        store = ReduxSDK().initialize(frameworkListener, navigationListener)
     }
 }

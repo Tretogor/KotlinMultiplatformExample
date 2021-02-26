@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 @SerialName("row:input")
 @PagRow
-data class InputRow(val id: String, val data: Data, val validation: InputValidation) : Row() {
+data class InputRow(val id: String, val data: Data, val validation: InputValidation? = null) : Row() {
 
     @Serializable
     data class Data(val hint: String)

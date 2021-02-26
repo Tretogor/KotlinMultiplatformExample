@@ -10,6 +10,7 @@ repositories {
 
 kotlin {
     jvm() // Creates a JVM target with the default name 'jvm'
+    ios()
 
     sourceSets {
         val commonMain by getting {

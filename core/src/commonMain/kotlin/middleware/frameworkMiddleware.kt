@@ -35,7 +35,7 @@ fun frameworkMiddleware(
     result
 }
 
-fun handlePhoneCallActionRow(
+private fun handlePhoneCallActionRow(
     frameworkListener: FrameworkListener,
     store: Store<AppState>,
     action: PhoneCallActionRow
