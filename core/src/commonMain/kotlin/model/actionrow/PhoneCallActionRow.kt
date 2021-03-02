@@ -14,4 +14,12 @@ class PhoneCallActionRow(val data: Data): ActionRow(), FrameworkAction {
 
     @Serializable
     data class Query(val from: String, var value: String = "")
+
+    override fun hasInformationToFill(): Boolean {
+        return data.query.from.isNotBlank()
+    }
+
+    override fun getIdsForSearch(): List<String> {
+        return listOf(data.query.from)
+    }
 }

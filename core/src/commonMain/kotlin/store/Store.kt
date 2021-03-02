@@ -3,6 +3,7 @@ package com.wcisang.kotlinmultiplatform.store
 import com.wcisang.kotlinmultiplatform.listeners.FrameworkListener
 import com.wcisang.kotlinmultiplatform.listeners.NavigationListener
 import com.wcisang.kotlinmultiplatform.middleware.frameworkMiddleware
+import com.wcisang.kotlinmultiplatform.middleware.informationCollectorMiddleware
 import com.wcisang.kotlinmultiplatform.middleware.logginMiddleware
 import com.wcisang.kotlinmultiplatform.middleware.navigationMiddleware
 import com.wcisang.kotlinmultiplatform.reducer.reducer
@@ -21,6 +22,7 @@ class Store {
             AppState(),
             applyMiddleware(
                 logginMiddleware(),
+                informationCollectorMiddleware(),
                 frameworkMiddleware(frameworkListener),
                 navigationMiddleware(navigationListener)
             )

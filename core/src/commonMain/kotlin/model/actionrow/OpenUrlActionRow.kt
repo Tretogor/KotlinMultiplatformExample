@@ -18,4 +18,12 @@ data class OpenUrlActionRow(val data: Data) : ActionRow(), FrameworkAction {
 
     @Serializable
     data class Query(val name: String, val from: String, var value: String = "")
+
+    override fun hasInformationToFill(): Boolean {
+        return data.querys.isNotEmpty()
+    }
+
+    override fun getIdsForSearch(): List<String> {
+        return data.getIdsFromQuery()
+    }
 }

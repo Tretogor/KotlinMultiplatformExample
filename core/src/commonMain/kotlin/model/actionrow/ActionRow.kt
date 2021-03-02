@@ -5,4 +5,8 @@ import kotlinx.serialization.Serializable
 
 @Polymorphic
 @Serializable
-abstract class ActionRow
+abstract class ActionRow {
+
+    abstract fun hasInformationToFill() : Boolean
+    abstract fun getIdsForSearch() : List<String>
+}
