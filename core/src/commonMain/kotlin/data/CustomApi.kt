@@ -25,6 +25,7 @@ class CustomApi {
     @Throws(Exception::class)
     suspend fun makeGetCall() = client.get<Screen>("$baseUrl/phonecall")
 
+
     @Throws(Exception::class)
     suspend fun makeCall() = client.get<Screen>("$baseUrl/screen")
 }
