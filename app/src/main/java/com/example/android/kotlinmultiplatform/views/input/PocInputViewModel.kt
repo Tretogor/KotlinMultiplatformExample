@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.wcisang.kotlinmultiplatform.model.InputRow
 import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformationState
 import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputState
+import com.wcisang.kotlinmultiplatform.state.ui.LoadingState
 import com.wcisang.kotlinmultiplatform.state.ui.SendViewInformation
 import com.wcisang.kotlinmultiplatform.store.Store
 
@@ -22,8 +23,8 @@ class PocInputViewModel constructor(
                 store.dispatch(SendViewInformation(row.id, input, row.validation))
             }else if (it is InvalidInputState && it.id == row.id) {
                 liveData.value = it.message
-            }else {
-
+            }else if (it is LoadingState) {
+                liveData.value = "carregando"
             }
         }
     }

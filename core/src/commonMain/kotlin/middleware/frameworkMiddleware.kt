@@ -5,13 +5,12 @@ import com.wcisang.kotlinmultiplatform.model.actionrow.FrameworkAction
 import com.wcisang.kotlinmultiplatform.model.actionrow.OpenUrlActionRow
 import com.wcisang.kotlinmultiplatform.model.actionrow.PhoneCallActionRow
 import com.wcisang.kotlinmultiplatform.state.AppState
-import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformation
 import com.wcisang.kotlinmultiplatform.status.InformationStatus
 import com.wcisang.kotlinmultiplatform.util.buildUrl
 import org.reduxkotlin.Store
 import org.reduxkotlin.middleware
 
-fun frameworkMiddleware(
+internal fun frameworkMiddleware(
     frameworkListener: FrameworkListener
 ) = middleware<AppState> { store, next, action ->
     if (action is FrameworkAction) {

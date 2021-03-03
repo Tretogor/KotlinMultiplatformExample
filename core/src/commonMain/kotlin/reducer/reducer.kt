@@ -1,10 +1,7 @@
 package com.wcisang.kotlinmultiplatform.reducer
 
 import com.wcisang.kotlinmultiplatform.state.AppState
-import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformation
-import com.wcisang.kotlinmultiplatform.state.ui.GetViewInformationState
-import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputInformation
-import com.wcisang.kotlinmultiplatform.state.ui.InvalidInputState
+import com.wcisang.kotlinmultiplatform.state.ui.*
 import org.reduxkotlin.Reducer
 
 val reducer: Reducer<AppState> = { state, action ->
@@ -13,6 +10,8 @@ val reducer: Reducer<AppState> = { state, action ->
         state = GetViewInformationState(action.id)
     }else if (action is InvalidInputInformation){
        state = InvalidInputState(action.message, action.id)
+    }else if (action is LoadingAction){
+        state = LoadingState()
     }else {
         state = AppState()
     }
