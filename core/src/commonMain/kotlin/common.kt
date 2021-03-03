@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile
+package com.wcisang.kotlinmultiplatform
 
 expect fun platformName(): String
 

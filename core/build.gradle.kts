@@ -2,7 +2,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("kapt")
     id("kotlinx-serialization")
+    id("kotlin-parcelize")
 }
 
 kotlin {
@@ -29,7 +31,12 @@ kotlin {
             dependencies {
                 implementation(Dependencies.KOTLIN_STD_COMMON)
                 implementation(Dependencies.KOIN_CORE)
+                implementation(project(":annotations"))
+                configurations.get("kapt").dependencies.add(
+                    project(":processor")
+                )
 
+                implementation("com.chrynan.parcelable:parcelable-android:0.2.0")
                 implementation(Dependencies.COROUTINES_CORE)
 
                 implementation(Dependencies.KTOR_CORE)
@@ -38,6 +45,10 @@ kotlin {
                 implementation(Dependencies.KTOR_SERIALIZATION)
 
                 implementation(Dependencies.KOTLINX_SERIALIZATION)
+
+                implementation(Dependencies.REDUX)
+                //implementation(Dependencies.REDUX_THUNK)
+                kotlin.srcDir("${buildDir.absolutePath}/generated/source/kaptKotlin/")
             }
         }
 

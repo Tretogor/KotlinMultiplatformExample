@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.0"
+    ext.kotlin_version = "1.4.30"
     repositories {
         google()
         mavenCentral()
@@ -10,7 +10,7 @@ buildscript {
         maven { url = "https://dl.bintray.com/touchlabpublic/kotlin" }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath "com.android.tools.build:gradle:4.1.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
 
@@ -24,6 +24,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+        maven { url = "https://dl.bintray.com/chrynan/chrynan" }
         maven { url = "https://dl.bintray.com/ekito/koin" }
         maven { url = "https://kotlin.bintray.com/kotlin-js-wrappers/" }
         maven { url = "https://dl.bintray.com/touchlabpublic/kotlin" }
@@ -33,3 +34,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug,-Xrunjdwp:transport=dt_socket\,address=5005\,server=y\,suspend=n" :clean assemble

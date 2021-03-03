@@ -2,7 +2,11 @@ package com.example.android.kotlinmultiplatform
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.jetbrains.handson.mpp.mobile.createApplicationScreenMessage
+import androidx.lifecycle.Observer
+import com.example.android.kotlinmultiplatform.views.button.PocButtonView
+import com.example.android.kotlinmultiplatform.views.input.PocInputView
+import com.wcisang.kotlinmultiplatform.model.ButtonRow
+import com.wcisang.kotlinmultiplatform.model.InputRow
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -13,7 +17,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView.text = createApplicationScreenMessage()
+        viewModel.liveData.observe(this, Observer {
+            it.forEach { row ->
+                when(row) {
+                    is ButtonRow -> {
+                        root.addView(
+                            PocButtonView(this).apply { setRow(row) }
+                        )
+                    }
+                    is InputRow -> {
+                        root.addView(
+                            PocInputView(this).apply { setRow(row) }
+                        )
+                    }
+                }
+            }
+        })
         viewModel.getRows()
     }
 }

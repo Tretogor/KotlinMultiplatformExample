@@ -1,7 +1,8 @@
-package com.jetbrains.handson.mpp.mobile.di
+package com.wcisang.kotlinmultiplatform.di
 
-import com.jetbrains.handson.mpp.mobile.data.CustomApi
-import com.jetbrains.handson.mpp.mobile.data.CustomRepository
+import com.wcisang.kotlinmultiplatform.data.CustomApi
+import com.wcisang.kotlinmultiplatform.data.CustomRepository
+import com.wcisang.kotlinmultiplatform.sdk.ReduxSDK
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module

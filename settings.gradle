@@ -1,3 +1,5 @@
+include ':processor'
+include ':annotations'
 include ':core'
 include ':app'
 rootProject.name = "KotlinMultiplatform"
