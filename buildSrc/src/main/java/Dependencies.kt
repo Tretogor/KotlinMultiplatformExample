@@ -1,8 +1,8 @@
 object Version {
     const val KOIN_VERSION = "3.0.0-alpha-4"
-    const val COROUTINES_VERSION = "1.3.9-native-mt"
-    const val KTOR_VERSION = "1.4.0"
-    const val KOTLINX_SERIALIZATION_VERSION = "1.0.0-RC"
+    const val COROUTINES_VERSION = "1.4.2-native-mt"
+    const val KTOR_VERSION = "1.4.1"
+    const val KOTLINX_SERIALIZATION_VERSION = "1.0.1"
     const val SLF4J_VERSION = "1.7.28"
     const val REDUX_VERSION = "0.5.5"
     const val REDUX_THUNK_VERSION = "0.5.3"
